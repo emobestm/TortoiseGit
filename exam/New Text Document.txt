@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var coll = 2 * (n - 2) + 1;
+            var side = n-2;
+
+            var asterix = new string('*', n - 2) + new string ('\\', 1) + new string (' ',1)+ new string('/', 1) + new string('*', n - 2);
+            var dashes = new string('-', n - 2) + new string('\\', 1) + new string(' ', 1) + new string('/', 1) + new string('-', n - 2);
+            var middle = new string(' ', n - 1) + "@" + new string(' ', n - 1);
+
+            var asterixdown = new string('*', n - 2) + new string('/', 1) + new string(' ', 1) + new string('\\', 1) + new string('*', n - 2);
+            var dashesdown = new string('-', n - 2) + new string('/',1) + new string(' ', 1) + new string('\\', 1) + new string('-', n - 2);
+
+            for (var i = 1; i <=side; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine(dashes);
+                }
+                else
+                { Console.WriteLine(asterix); }
+            }
+           
+           Console.WriteLine(middle);
+            for (var i = 1; i <= side; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine(dashesdown);
+                }
+                else
+                { Console.WriteLine(asterixdown); }
+            }
+
+        }
+        public static string StringCreater(string text, int repeatCount)
+        {
+            string repeatedtext = string.Empty;
+            for (int currentCount = 0; currentCount < repeatCount; currentCount++)
+            {
+                repeatedtext += text;
+            }
+            return repeatedtext;
+        }
+
+
+
+
+    }
+}
