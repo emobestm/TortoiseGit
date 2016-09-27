@@ -49,9 +49,7 @@ namespace ConsoleApplication1
             for (int currentCount = 0; currentCount < repeatCount; currentCount++)
             {
                 repeatedtext += text;
-            }
-            return repeatedtext;
-        }
+            
 
 
 
